@@ -4552,22 +4552,14 @@
     <div class="screen" id="techChatScreen">
       <!-- LEFT SIDEBAR: &t TECH -->
       <div class="tech-sidebar">
-        <!-- 1. Brand Header with clean &t TECH branding -->
+        <!-- 1. Brand Header -->
         <div class="tech-sidebar-header">
           <div class="tech-brand-wrap">
             <div class="tech-brand-badge">
               <span class="tech-brand-symbol">&amp;t</span>
             </div>
-            <div class="tech-brand-text">
-              <span class="tech-brand-title">TECH</span>
-              <span class="tech-brand-subtitle">Concierge</span>
-            </div>
           </div>
           <div class="tech-header-actions">
-            <!-- Trashboat Notification Icon from Screen 1 (Large logo inside) -->
-            <button class="tech-sidebar-btn" onclick="showToast('No new notifications (Trashboat)')" title="Notifications" style="padding:0;overflow:visible;">
-              <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon" style="width: 36px; height: 36px; object-fit: contain; mix-blend-mode: screen; pointer-events: none;">
-            </button>
             <button class="tech-sidebar-btn" onclick="showToast('Starting new chat channel...')" title="New Chat">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -4593,14 +4585,6 @@
             </svg>
             <input type="text" class="tech-search-input" id="techSearchInput" placeholder="Search or start new chat" oninput="filterTechContacts(this.value)">
           </div>
-        </div>
-
-        <!-- 3. Filter Pills (All, Active, Groups, Recent) -->
-        <div class="tech-filter-pills-row">
-          <button class="tech-filter-chip active" data-tab="all" onclick="setTechTabFilter('all')">All</button>
-          <button class="tech-filter-chip" data-tab="active" onclick="setTechTabFilter('active')">Active</button>
-          <button class="tech-filter-chip" data-tab="groups" onclick="setTechTabFilter('groups')">Groups</button>
-          <button class="tech-filter-chip" data-tab="recent" onclick="setTechTabFilter('recent')">Recent</button>
         </div>
 
         <!-- 4. Contacts Scroll Feed -->
