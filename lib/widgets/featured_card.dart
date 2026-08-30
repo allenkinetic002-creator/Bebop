@@ -101,16 +101,7 @@ class _FeaturedCardState extends State<FeaturedCard> {
                     height: 1.15,
                   ),
                 ),
-                const SizedBox(height: 6),
-                Text(
-                  widget.item.formattedPrice,
-                  style: GoogleFonts.poppins(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    color: const Color(0xFF013D29),
-                  ),
-                ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
                 GestureDetector(
                   onTap: () {
                     setState(() {

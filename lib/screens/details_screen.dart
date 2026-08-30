@@ -53,7 +53,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     SizeOption(
       id: 'size_4',
       name: 'Custom',
-      volume: '+ \$1.00',
+      volume: 'Customized',
       imageUrl:
           'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&auto=format&fit=crop&q=80',
     ),
