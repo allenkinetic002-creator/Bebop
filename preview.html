@@ -90,27 +90,6 @@
       cursor: pointer;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-icon {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-      mix-blend-mode: screen;
-      pointer-events: none;
-      filter: drop-shadow(0 0 6px rgba(255,255,255,0.35));
-      transition: transform 0.25s ease, filter 0.25s ease;
-    }
-
-    .header-left:hover .logo-icon {
-      transform: rotate(8deg) scale(1.1);
-      filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
-    }
-
     .header-icons {
       display: flex;
       align-items: center;
@@ -1687,10 +1666,7 @@
       <!-- 1. TOP WAVY HEADER -->
       <div class="wavy-header">
         <div class="header-nav">
-          <div class="header-left">
-            <img class="user-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
-            <img src="assets/ghostfreak.png" alt="Ghostfreak Logo" class="logo-icon">
-          </div>
+          <img class="user-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
           <div class="header-icons">
             <button class="icon-btn" onclick="showToast('No new notifications')" title="Notifications">
               <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon">
@@ -1919,10 +1895,7 @@
     <div class="screen" id="detailsScreen">
       <div class="wavy-header">
         <div class="header-nav">
-          <div class="header-left">
-            <img class="user-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
-            <img src="assets/ghostfreak.png" alt="Ghostfreak Logo" class="logo-icon">
-          </div>
+          <img class="user-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
           <div class="header-icons">
             <button class="icon-btn" onclick="showToast('No new notifications')" title="Notifications">
               <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon">
@@ -2062,7 +2035,7 @@
          ========================================================================= -->
     <div class="screen" id="joyBoonScreen">
       <div class="joy-top-bar">
-        <div class="joy-top-left" style="display:flex;align-items:center;gap:10px;">
+        <div class="joy-top-left">
           <button class="menu-hamburger-btn" onclick="cycleCartScreen()" title="Click to loop">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -2070,7 +2043,6 @@
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
           </button>
-          <img src="assets/ghostfreak.png" alt="Ghostfreak Logo" class="logo-icon" style="mix-blend-mode:multiply;filter:invert(0.15);">
         </div>
         <h1 class="joy-title">Joy Boon</h1>
         <div class="joy-top-right">
@@ -2187,16 +2159,13 @@
          ========================================================================= -->
     <div class="screen" id="pastaScreen">
       <div class="pasta-top-bar">
-        <div style="display:flex;align-items:center;gap:10px;">
-          <button class="menu-hamburger-btn" onclick="cycleCartScreen()" title="Click to loop">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </button>
-          <img src="assets/ghostfreak.png" alt="Ghostfreak Logo" class="logo-icon" style="mix-blend-mode:multiply;filter:invert(0.15);">
-        </div>
+        <button class="menu-hamburger-btn" onclick="cycleCartScreen()" title="Click to loop">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
 
         <h1 class="pasta-title">Delicious Pasta</h1>
 
@@ -2315,10 +2284,7 @@
       <!-- 1. TOP WAVY HEADER -->
       <div class="smooth-header">
         <div class="header-nav">
-          <div class="header-left">
-            <img class="user-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
-            <img src="assets/ghostfreak.png" alt="Ghostfreak Logo" class="logo-icon">
-          </div>
+          <img class="user-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
           <div class="header-icons">
             <button class="icon-btn" onclick="showToast('No new notifications')" title="Notifications">
               <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon">
