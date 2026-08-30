@@ -131,13 +131,13 @@ class _SmoothScreenState extends State<SmoothScreen> {
                         padding: const EdgeInsets.all(4),
                         child: Image.asset(
                           'assets/trashboat.png',
-                          width: 40,
-                          height: 40,
+                          width: 50,
+                          height: 50,
                           color: Colors.white,
                           colorBlendMode: BlendMode.srcIn,
                           errorBuilder: (context, error, stackTrace) =>
                               const Icon(Icons.notifications_none_rounded,
-                                  color: Colors.white, size: 30),
+                                  color: Colors.white, size: 36),
                         ),
                       ),
                     ),
@@ -148,12 +148,12 @@ class _SmoothScreenState extends State<SmoothScreen> {
                         padding: const EdgeInsets.all(4),
                         child: Image.asset(
                           'assets/hand.png',
-                          width: 40,
-                          height: 40,
+                          width: 50,
+                          height: 50,
                           color: Colors.white,
                           colorBlendMode: BlendMode.srcIn,
                           errorBuilder: (context, error, stackTrace) =>
-                              const Icon(Icons.touch_app, color: Colors.white, size: 30),
+                              const Icon(Icons.touch_app, color: Colors.white, size: 36),
                         ),
                       ),
                     ),

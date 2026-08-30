@@ -78,8 +78,8 @@ class WavyHeader extends StatelessWidget {
                   GestureDetector(
                     onTap: onNotificationTap ?? () {},
                     child: Container(
-                      width: 54,
-                      height: 54,
+                      width: 64,
+                      height: 64,
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.14),
                         shape: BoxShape.circle,
@@ -87,14 +87,14 @@ class WavyHeader extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Image.asset(
                         'assets/trashboat.png',
-                        width: 40,
-                        height: 40,
+                        width: 50,
+                        height: 50,
                         fit: BoxFit.contain,
                         color: Colors.white,
                         colorBlendMode: BlendMode.srcIn,
                         errorBuilder: (context, error, stackTrace) =>
                             const Icon(Icons.notifications_none_rounded,
-                                color: Colors.white, size: 30),
+                                color: Colors.white, size: 36),
                       ),
                     ),
                   ),
@@ -105,8 +105,8 @@ class WavyHeader extends StatelessWidget {
                       GestureDetector(
                         onTap: onCartTap ?? () {},
                         child: Container(
-                          width: 54,
-                          height: 54,
+                          width: 64,
+                          height: 64,
                           decoration: BoxDecoration(
                             color: Colors.white.withOpacity(0.14),
                             shape: BoxShape.circle,
@@ -114,14 +114,14 @@ class WavyHeader extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Image.asset(
                             'assets/hand.png',
-                            width: 40,
-                            height: 40,
+                            width: 50,
+                            height: 50,
                             fit: BoxFit.contain,
                             color: Colors.white,
                             colorBlendMode: BlendMode.srcIn,
                             errorBuilder: (context, error, stackTrace) =>
                                 const Icon(Icons.touch_app,
-                                    color: Colors.white, size: 30),
+                                    color: Colors.white, size: 36),
                           ),
                         ),
                       ),
