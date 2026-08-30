@@ -2365,26 +2365,31 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .tech-back-nav-btn {
+    .tech-nav-icons-group {
       display: flex;
       align-items: center;
       gap: 10px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      color: #FFFFFF;
-      padding: 8px 20px;
-      border-radius: 24px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
     }
 
-    .tech-back-nav-btn:hover {
+    .tech-top-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tech-top-icon-btn:hover {
       background: #FFFFFF;
       color: #013D29;
-      transform: translateX(-4px);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
 
     .tech-desktop-container {
@@ -3993,19 +3998,50 @@
          SCREEN 7: FULL UI DESKTOP WHATSAPP SCREEN (&t TECH)
          ========================================================================= -->
     <div class="screen" id="techChatScreen">
-      <!-- Top Navigation Bar -->
+      <!-- Top Navigation Bar with Home, Chair, Handphone, and Profile icons -->
       <div class="tech-screen-top-bar">
-        <button class="tech-back-nav-btn" onclick="exitTechChatScreen()" title="Return to Starbucks Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          Back to Menu
-        </button>
-        <div style="color: rgba(255,255,255,0.8); font-size: 14.5px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+        <div class="tech-nav-icons-group">
+          <!-- 1. Home Icon (Returns to Home Screen) -->
+          <button class="tech-top-icon-btn" onclick="exitTechChatScreenTo(0)" title="Home Screen">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </button>
+
+          <!-- 2. Chair Icon (Cafe Lounge & Seating Screen) -->
+          <button class="tech-top-icon-btn" onclick="exitTechChatScreenTo(2)" title="Cafe Lounge & Seating">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 19v2"></path>
+              <path d="M18 19v2"></path>
+              <path d="M4 11a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v5H4v-5z"></path>
+              <path d="M4 16v3"></path>
+              <path d="M20 16v3"></path>
+              <path d="M7 8V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"></path>
+            </svg>
+          </button>
+
+          <!-- 3. Handphone Icon (Mobile Orders) -->
+          <button class="tech-top-icon-btn" onclick="showToast('Mobile Ordering App View Active 📱')" title="Mobile Orders">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"></line>
+            </svg>
+          </button>
+
+          <!-- 4. Profile Icon (User / Pam Bondi Modal) -->
+          <button class="tech-top-icon-btn" onclick="openPersonModal('Pam Bondi')" title="Profile & Tastemaker">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+        </div>
+
+        <div style="color: rgba(255,255,255,0.85); font-size: 14.5px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
           <span style="color: #00E676; font-size: 16px;">●</span> Starbucks &t TECH Concierge Hub
         </div>
-        <div style="width: 130px;"></div>
+        <div style="width: 200px;"></div>
       </div>
 
       <!-- 2-Column Desktop WhatsApp Layout -->
@@ -4804,6 +4840,16 @@
       }
       goToScreen(previousScreenBeforeTechChat);
       showToast('Returned to Menu');
+    }
+
+    function exitTechChatScreenTo(screenIdx = 0) {
+      const techScreen = document.getElementById('techChatScreen');
+      if (techScreen) {
+        techScreen.classList.remove('active');
+      }
+      goToScreen(screenIdx);
+      const names = ['Home Menu', 'Details View', 'Joy Boon Seating', 'Delicious Pasta', 'Smooth Everyday'];
+      showToast('Navigated to ' + (names[screenIdx] || 'Menu'));
     }
 
     function openTechChatModal(contactId) {
