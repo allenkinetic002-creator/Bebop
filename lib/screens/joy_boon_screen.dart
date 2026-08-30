@@ -121,13 +121,13 @@ class _JoyBoonScreenState extends State<JoyBoonScreen> {
                           padding: const EdgeInsets.all(6),
                           child: Image.asset(
                             'assets/hand.png',
-                            width: 26,
-                            height: 26,
+                            width: 34,
+                            height: 34,
                             color: const Color(0xFF013D29),
                             colorBlendMode: BlendMode.srcIn,
                             errorBuilder: (context, error, stackTrace) =>
                                 const Icon(Icons.touch_app,
-                                    color: Color(0xFF013D29), size: 28),
+                                    color: Color(0xFF013D29), size: 30),
                           ),
                         ),
                       ),

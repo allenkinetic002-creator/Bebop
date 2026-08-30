@@ -140,12 +140,12 @@ class _SmoothScreenState extends State<SmoothScreen> {
                         padding: const EdgeInsets.all(8),
                         child: Image.asset(
                           'assets/hand.png',
-                          width: 26,
-                          height: 26,
+                          width: 34,
+                          height: 34,
                           color: Colors.white,
                           colorBlendMode: BlendMode.srcIn,
                           errorBuilder: (context, error, stackTrace) =>
-                              const Icon(Icons.touch_app, color: Colors.white, size: 26),
+                              const Icon(Icons.touch_app, color: Colors.white, size: 30),
                         ),
                       ),
                     ),

@@ -86,23 +86,23 @@ class WavyHeader extends StatelessWidget {
                       GestureDetector(
                         onTap: onCartTap ?? () {},
                         child: Container(
-                          width: 42,
-                          height: 42,
+                          width: 48,
+                          height: 48,
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.12),
+                            color: Colors.white.withOpacity(0.14),
                             shape: BoxShape.circle,
                           ),
                           alignment: Alignment.center,
                           child: Image.asset(
                             'assets/hand.png',
-                            width: 24,
-                            height: 24,
+                            width: 34,
+                            height: 34,
                             fit: BoxFit.contain,
                             color: Colors.white,
                             colorBlendMode: BlendMode.srcIn,
                             errorBuilder: (context, error, stackTrace) =>
                                 const Icon(Icons.touch_app,
-                                    color: Colors.white, size: 22),
+                                    color: Colors.white, size: 28),
                           ),
                         ),
                       ),
