@@ -114,6 +114,26 @@ class _JoyBoonScreenState extends State<JoyBoonScreen> {
                   ),
                   Row(
                     children: [
+                      // Trashboat Notification Icon
+                      GestureDetector(
+                        onTap: () => ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('No new notifications')),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.all(6),
+                          child: Image.asset(
+                            'assets/trashboat.png',
+                            width: 50,
+                            height: 50,
+                            color: const Color(0xFF013D29),
+                            colorBlendMode: BlendMode.srcIn,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.notifications_none_rounded,
+                                    color: Color(0xFF013D29), size: 36),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
                       // Hand Button -> Loops to Screen 4 (Delicious Pasta)
                       GestureDetector(
                         onTap: () => _navigateToPastaScreen(),
