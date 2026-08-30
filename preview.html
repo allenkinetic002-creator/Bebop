@@ -4609,46 +4609,29 @@
           <div id="techRecentContactsList"></div>
         </div>
 
-        <!-- 5. Sidebar Bottom Navigation Dock (Home, Chair, Handphone, Woody, Ghostfreak, Cart) -->
+        <!-- Bottom Navigation Dock: Home, phone_hand, Woody, Cart -->
         <div class="tech-sidebar-bottom-dock">
-          <!-- 1. Home Icon -->
-          <button class="tech-dock-nav-btn" onclick="exitTechChatScreenTo(0)" title="Home Menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <!-- 1. Home Icon (bigger) -->
+          <button class="tech-dock-nav-btn" onclick="exitTechChatScreenTo(0)" title="Home Menu" style="width:50px;height:50px;border-radius:14px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
           </button>
 
-          <!-- 2. Chair Icon (Cafe Lounge & Seating Screen) -->
-          <button class="tech-dock-nav-btn" onclick="exitTechChatScreenTo(2)" title="Cafe Lounge & Seating">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 19v2"></path>
-              <path d="M18 19v2"></path>
-              <path d="M4 11a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v5H4v-5z"></path>
-              <path d="M4 16v3"></path>
-              <path d="M20 16v3"></path>
-              <path d="M7 8V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"></path>
-            </svg>
+          <!-- 2. Handphone Icon - phone_hand.png (bigger) -->
+          <button class="tech-dock-nav-btn" onclick="showToast('Mobile Ordering App View Active 📱')" title="Mobile Orders" style="width:50px;height:50px;border-radius:14px;">
+            <img src="assets/phone_hand.png" alt="Mobile App" style="width: 32px; height: 32px; object-fit: contain;">
           </button>
 
-          <!-- 3. Handphone Icon (phone_hand.png) -->
-          <button class="tech-dock-nav-btn" onclick="showToast('Mobile Ordering App View Active 📱')" title="Mobile Orders">
-            <img src="assets/phone_hand.png" alt="Mobile App" style="width: 24px; height: 24px; object-fit: contain;">
+          <!-- 3. Profile Icon - Woody (bigger) -->
+          <button class="tech-dock-nav-btn" onclick="openPersonModal('Pam Bondi')" title="Woody Profile" style="overflow:hidden;padding:2px;width:50px;height:50px;border-radius:14px;">
+            <img src="assets/woody.png" alt="Woody Profile" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
           </button>
 
-          <!-- 4. Profile Icon (Woody from Downloads) -->
-          <button class="tech-dock-nav-btn" onclick="openPersonModal('Pam Bondi')" title="Woody Profile" style="overflow: hidden; padding: 2px;">
-            <img src="assets/woody.png" alt="Woody Profile" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
-          </button>
-
-          <!-- 5. Notification Icon (Ghostfreak from Downloads) -->
-          <button class="tech-dock-nav-btn" onclick="showToast('No new notifications (Ghostfreak)')" title="Notifications">
-            <img src="assets/ghostfreak.png" alt="Notifications" style="width: 26px; height: 26px; object-fit: contain;">
-          </button>
-
-          <!-- 6. Cart Icon (Pixel Hand from Downloads with live badge) -->
-          <button class="tech-dock-nav-btn cart-btn" onclick="cycleCartScreen()" title="Cart (Pixel Hand)">
-            <img src="assets/hand_pixel.png" alt="Cart" style="width: 24px; height: 24px; object-fit: contain;">
+          <!-- 4. Cart Icon - hand_pixel.png (smaller, 36px) -->
+          <button class="tech-dock-nav-btn cart-btn" onclick="cycleCartScreen()" title="Cart" style="width:36px;height:36px;border-radius:10px;">
+            <img src="assets/hand_pixel.png" alt="Cart" style="width: 20px; height: 20px; object-fit: contain;">
             <span class="cart-badge" id="cartBadgeTech" style="display:none;">0</span>
           </button>
         </div>
