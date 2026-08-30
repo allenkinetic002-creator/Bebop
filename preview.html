@@ -4145,14 +4145,8 @@
          ========================================================================= -->
     <div class="screen" id="pastaScreen">
       <div class="pasta-top-bar">
-        <div class="pasta-top-left" style="display:flex;align-items:center;gap:16px;">
-          <button class="menu-hamburger-btn" onclick="cycleCartScreen()" title="Click to loop">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </button>
+        <div class="pasta-top-left" style="display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="showToast('Allen (Host Profile)')">
+          <img class="user-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80" alt="Host Profile" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
           <span style="font-size:24px;font-weight:900;color:#013D29;letter-spacing:0.5px;font-family:'Poppins',sans-serif;">Minions</span>
         </div>
 
@@ -4167,17 +4161,6 @@
           <button class="cup-icon-btn" onclick="cycleCartScreen()" title="Click to loop: 4th ➔ 5th">
             <img src="assets/hand.png?v=2" alt="Hand Icon" class="hand-nav-icon dark-tint">
           </button>
-
-          <div class="host-profile-block" onclick="showToast('Allen (Smooth Out Your Everyday)')" style="display:flex;align-items:center;gap:12px;">
-            <div class="host-avatar-wrap">
-              <img class="host-avatar-img" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80" alt="Host Profile">
-              <div class="online-indicator"></div>
-            </div>
-            <div class="host-info-text">
-              <span class="host-main-title">Smooth Out</span>
-              <span class="host-subtitle">Your Everyday</span>
-            </div>
-          </div>
         </div>
       </div>
 
