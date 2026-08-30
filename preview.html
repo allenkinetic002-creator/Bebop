@@ -2352,166 +2352,149 @@
       to { opacity: 1; transform: scale(1); filter: blur(0); }
     }
 
-    .tech-screen-top-bar {
-      height: 58px;
-      background: #013D29;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 28px;
-      flex-shrink: 0;
-      z-index: 10;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .tech-nav-icons-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .tech-top-icon-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .tech-top-icon-btn:hover {
-      background: #FFFFFF;
-      color: #013D29;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    }
-
-    .tech-desktop-container {
-      flex: 1;
-      height: calc(100vh - 58px);
-      display: flex;
-      background: #FFFFFF;
+    /* =========================================================================
+       SCREEN 7: FULL UI DESKTOP WHATSAPP TECH CHAT SCREEN (&t TECH)
+       ========================================================================= */
+    #techChatScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      background: #001A12;
+      display: none;
+      flex-direction: row;
       overflow: hidden;
+      z-index: 9999;
+    }
+
+    #techChatScreen.active {
+      display: flex;
+      animation: morphScreen 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes morphScreen {
+      from { opacity: 0; transform: scale(0.985); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     /* LEFT SIDEBAR: &t TECH (WhatsApp-style dark green) */
     .tech-sidebar {
-      width: 400px;
+      width: 430px;
+      height: 100vh;
       background: #013D29;
-      background: linear-gradient(180deg, #013D29 0%, #00261A 100%);
+      background: linear-gradient(180deg, #013D29 0%, #002216 100%);
       display: flex;
       flex-direction: column;
       border-right: 1px solid rgba(255, 255, 255, 0.08);
       flex-shrink: 0;
+      position: relative;
     }
 
+    /* 1. BRAND HEADER */
     .tech-sidebar-header {
-      padding: 20px 22px 14px;
+      padding: 16px 20px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.12);
     }
 
-    .tech-logo-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .tech-logo-symbol {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #FFFFFF;
-      font-size: 18px;
-      font-weight: 800;
-      font-family: 'Poppins', cursive, sans-serif;
-    }
-
-    .tech-logo-text {
-      font-size: 22px;
-      font-weight: 800;
-      color: #FFFFFF;
-      letter-spacing: 1.2px;
-    }
-
-    .tech-header-icons {
+    .tech-brand-wrap {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .tech-plus-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #FFFFFF;
-      border: none;
-      color: #013D29;
+    .tech-brand-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: #02573B;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
-    .tech-plus-btn:hover {
-      transform: scale(1.1) rotate(90deg);
-      background: #F4D06F;
-    }
-
-    .tech-dots-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: transparent;
-      border: none;
-      color: rgba(255, 255, 255, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .tech-dots-btn:hover {
-      background: rgba(255, 255, 255, 0.12);
+    .tech-brand-symbol {
       color: #FFFFFF;
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* SEARCH WRAPPER */
+    .tech-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tech-brand-title {
+      font-size: 19px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 1.5px;
+      line-height: 1.1;
+    }
+
+    .tech-brand-subtitle {
+      font-size: 10.5px;
+      color: #F4D06F;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .tech-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tech-sidebar-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tech-sidebar-btn:hover {
+      background: #FFFFFF;
+      color: #013D29;
+      transform: scale(1.08);
+    }
+
+    /* 2. SEARCH BAR */
     .tech-search-container {
-      padding: 14px 20px 10px;
+      padding: 12px 18px 8px;
     }
 
     .tech-search-pill {
       background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
       display: flex;
       align-items: center;
-      padding: 8px 16px;
+      padding: 9px 16px;
       gap: 10px;
       transition: all 0.2s;
     }
 
     .tech-search-pill:focus-within {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.35);
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 0 2px rgba(0, 230, 118, 0.25);
     }
 
     .tech-search-icon {
@@ -2523,65 +2506,61 @@
       background: transparent;
       border: none;
       color: #FFFFFF;
-      font-size: 14.5px;
+      font-size: 14px;
       outline: none;
       width: 100%;
       font-family: inherit;
     }
 
     .tech-search-input::placeholder {
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.6);
     }
 
-    /* FILTER TABS (Recent, Media, Contacts) */
-    .tech-filter-tabs {
+    /* 3. FILTER PILLS */
+    .tech-filter-pills-row {
       display: flex;
       align-items: center;
-      justify-content: space-around;
-      padding: 6px 20px 12px;
+      gap: 8px;
+      padding: 4px 18px 12px;
+      overflow-x: auto;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .tech-tab-icon-btn {
-      background: transparent;
-      border: none;
-      color: rgba(255, 255, 255, 0.6);
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .tech-filter-pills-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tech-filter-chip {
+      padding: 5px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 12.5px;
+      font-weight: 600;
+      white-space: nowrap;
       cursor: pointer;
       transition: all 0.2s;
-      position: relative;
     }
 
-    .tech-tab-icon-btn:hover {
+    .tech-filter-chip:hover {
+      background: rgba(255, 255, 255, 0.2);
       color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.1);
     }
 
-    .tech-tab-icon-btn.active {
-      color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.16);
+    .tech-filter-chip.active {
+      background: #00E676;
+      color: #013D29;
+      font-weight: 700;
+      border-color: #00E676;
+      box-shadow: 0 2px 8px rgba(0, 230, 118, 0.35);
     }
 
-    .tech-tab-icon-btn.active::after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      width: 16px;
-      height: 3px;
-      border-radius: 2px;
-      background: #F4D06F;
-    }
-
-    /* CONTACTS SCROLL FEED */
+    /* 4. CONTACTS SCROLL FEED */
     .tech-contacts-feed {
       flex: 1;
       overflow-y: auto;
-      padding: 8px 12px 20px;
+      padding: 8px 10px 80px;
     }
 
     .tech-contacts-feed::-webkit-scrollbar {
@@ -2592,36 +2571,28 @@
       border-radius: 4px;
     }
 
-    .tech-section-header {
-      font-size: 13px;
+    .tech-section-label {
+      font-size: 12px;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.6);
-      text-transform: capitalize;
-      letter-spacing: 0.4px;
-      padding: 14px 12px 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 12px 14px 6px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-
-    .tech-section-count {
-      background: rgba(255, 255, 255, 0.15);
-      color: #FFFFFF;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 10px;
     }
 
     .tech-contact-item {
       display: flex;
       align-items: center;
       padding: 12px 14px;
-      border-radius: 16px;
+      border-radius: 14px;
       cursor: pointer;
-      gap: 14px;
+      gap: 13px;
       transition: all 0.2s;
       position: relative;
+      margin-bottom: 3px;
     }
 
     .tech-contact-item:hover {
@@ -2630,7 +2601,7 @@
 
     .tech-contact-item.active {
       background: rgba(255, 255, 255, 0.16);
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+      box-shadow: inset 3px 0 0 #00E676, 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .tech-avatar-box {
@@ -2647,6 +2618,587 @@
       border-radius: 50%;
       object-fit: cover;
       border: 1.5px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .tech-status-dot {
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      border: 2px solid #013D29;
+    }
+
+    .tech-status-dot.online {
+      background: #00E676;
+      box-shadow: 0 0 8px #00E676;
+    }
+
+    .tech-status-dot.recent {
+      background: #FFA726;
+      box-shadow: 0 0 6px #FFA726;
+    }
+
+    .tech-contact-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .tech-contact-top-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .tech-contact-name-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .tech-contact-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFFFFF;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tech-group-badge {
+      background: linear-gradient(135deg, #FF6B6B 0%, #EE5253 100%);
+      color: #FFFFFF;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .tech-contact-time {
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.55);
+      flex-shrink: 0;
+    }
+
+    .tech-contact-bottom-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .tech-contact-snippet {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.7);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+
+    .tech-unread-badge {
+      background: #00E676;
+      color: #013D29;
+      font-size: 11px;
+      font-weight: 800;
+      border-radius: 10px;
+      padding: 1px 6px;
+      min-width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    /* 5. SIDEBAR BOTTOM NAVIGATION DOCK (Home, Chair, Handphone, Woody, Ghostfreak, Cart) */
+    .tech-sidebar-bottom-dock {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background: #002216;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 12px;
+      z-index: 10;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .tech-dock-nav-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tech-dock-nav-btn:hover {
+      background: #FFFFFF;
+      color: #013D29;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* RIGHT MAIN: CHAT CANVAS */
+    .tech-chat-main {
+      flex: 1;
+      height: 100vh;
+      background: #F4F7F5;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* EMPTY CHAT STATE */
+    .tech-empty-state {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: #F8FAF9;
+      background-image: radial-gradient(rgba(1, 61, 41, 0.05) 1px, transparent 0);
+      background-size: 24px 24px;
+      text-align: center;
+    }
+
+    .tech-empty-icon-ring {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #013D29 0%, #02573B 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 36px rgba(1, 61, 41, 0.25);
+      margin-bottom: 24px;
+      animation: floatPulse 3s infinite ease-in-out;
+    }
+
+    @keyframes floatPulse {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-6px) scale(1.03); }
+    }
+
+    .tech-empty-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #013D29;
+      margin-bottom: 10px;
+    }
+
+    .tech-empty-desc {
+      font-size: 15px;
+      color: #4A6559;
+      max-width: 480px;
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+
+    .tech-empty-features-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .tech-empty-pill {
+      padding: 7px 16px;
+      border-radius: 20px;
+      background: #FFFFFF;
+      border: 1px solid #D5E5DC;
+      font-size: 13px;
+      font-weight: 700;
+      color: #013D29;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .tech-empty-security-tag {
+      font-size: 12.5px;
+      color: #889990;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    /* ACTIVE CHAT VIEW CONTAINER */
+    .tech-active-chat-wrapper {
+      flex: 1;
+      height: 100vh;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .tech-active-chat-wrapper.active {
+      display: flex;
+    }
+
+    /* CHAT HEADER */
+    .tech-main-header {
+      padding: 14px 24px;
+      background: #FFFFFF;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      z-index: 5;
+      flex-shrink: 0;
+    }
+
+    .tech-active-user-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+    }
+
+    .tech-active-avatar-box {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+    }
+
+    .tech-active-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .tech-active-user-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tech-active-name-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tech-active-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: #013D29;
+    }
+
+    .tech-verified-check {
+      background: #00754A;
+      color: #FFFFFF;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .tech-active-status {
+      font-size: 12.5px;
+      color: #00754A;
+      font-weight: 600;
+    }
+
+    .tech-main-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tech-action-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #F0F4F2;
+      border: none;
+      color: #013D29;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tech-action-icon-btn:hover {
+      background: #013D29;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .tech-close-modal-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #FDEDEC;
+      border: none;
+      color: #E74C3C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-left: 6px;
+    }
+
+    .tech-close-modal-btn:hover {
+      background: #E74C3C;
+      color: #FFFFFF;
+      transform: scale(1.08) rotate(90deg);
+    }
+
+    /* CHAT BODY FEED */
+    .tech-chat-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background-color: #ECE5DD;
+      background-image: radial-gradient(rgba(1, 61, 41, 0.06) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+
+    .tech-date-separator {
+      align-self: center;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(4px);
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #4A6559;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .tech-bubble-row {
+      display: flex;
+      gap: 12px;
+      max-width: 78%;
+      animation: bubblePop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tech-bubble-row.incoming {
+      align-self: flex-start;
+    }
+
+    .tech-bubble-row.outgoing {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .tech-bubble-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .tech-bubble-box {
+      padding: 12px 18px;
+      border-radius: 18px;
+      font-size: 14.5px;
+      line-height: 1.45;
+      position: relative;
+      word-break: break-word;
+    }
+
+    .tech-bubble-row.incoming .tech-bubble-box {
+      background: #FFFFFF;
+      color: #1F2937;
+      border-top-left-radius: 4px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .tech-bubble-row.outgoing .tech-bubble-box {
+      background: #013D29;
+      color: #FFFFFF;
+      border-top-right-radius: 4px;
+      box-shadow: 0 4px 14px rgba(1, 61, 41, 0.25);
+    }
+
+    .tech-bubble-meta {
+      font-size: 11px;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tech-bubble-row.incoming .tech-bubble-meta {
+      color: #889990;
+    }
+
+    .tech-bubble-row.outgoing .tech-bubble-meta {
+      color: rgba(255, 255, 255, 0.7);
+      justify-content: flex-end;
+    }
+
+    /* TYPING INDICATOR */
+    .tech-typing-row {
+      display: none;
+      align-self: flex-start;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .tech-typing-row.active {
+      display: flex;
+    }
+
+    .tech-typing-box {
+      background: #FFFFFF;
+      padding: 10px 16px;
+      border-radius: 16px;
+      border-top-left-radius: 4px;
+      display: flex;
+      gap: 5px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .tech-typing-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00754A;
+      animation: typingJump 1.2s infinite ease-in-out;
+    }
+
+    .tech-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .tech-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    /* QUICK REPLY CHIPS */
+    .tech-quick-chips-row {
+      padding: 10px 24px 8px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      background: #FFFFFF;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      flex-shrink: 0;
+    }
+
+    .tech-quick-chips-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tech-quick-chip {
+      padding: 7px 14px;
+      border-radius: 20px;
+      background: #F0F6F2;
+      border: 1px solid #D5E5DC;
+      color: #013D29;
+      font-size: 12.5px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tech-quick-chip:hover {
+      background: #013D29;
+      color: #FFFFFF;
+      border-color: #013D29;
+      transform: translateY(-1px);
+    }
+
+    /* BOTTOM INPUT DOCK */
+    .tech-dock-container {
+      padding: 12px 24px 18px;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      flex-shrink: 0;
+    }
+
+    .tech-dock-icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #F4F7F5;
+      border: none;
+      color: #4A6559;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .tech-dock-icon-btn:hover {
+      background: #013D29;
+      color: #FFFFFF;
+    }
+
+    .tech-dock-input {
+      flex: 1;
+      height: 46px;
+      border-radius: 24px;
+      background: #F4F7F5;
+      border: 1.5px solid transparent;
+      padding: 0 20px;
+      font-size: 15px;
+      color: #1F2937;
+      outline: none;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .tech-dock-input:focus {
+      background: #FFFFFF;
+      border-color: #00754A;
+      box-shadow: 0 0 0 3px rgba(0, 117, 74, 0.12);
+    }
+
+    .tech-dock-send-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #013D29;
+      border: none;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(1, 61, 41, 0.35);
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .tech-dock-send-btn:hover {
+      background: #00754A;
+      transform: scale(1.08);
     }
 
     .tech-status-dot {
@@ -3998,11 +4550,69 @@
          SCREEN 7: FULL UI DESKTOP WHATSAPP SCREEN (&t TECH)
          ========================================================================= -->
     <div class="screen" id="techChatScreen">
-      <!-- Top Navigation Bar with Home, Chair, Handphone (phone_hand), and Profile (woody) icons -->
-      <div class="tech-screen-top-bar">
-        <div class="tech-nav-icons-group">
-          <!-- 1. Home Icon (Returns to Home Screen) -->
-          <button class="tech-top-icon-btn" onclick="exitTechChatScreenTo(0)" title="Home Screen">
+      <!-- LEFT SIDEBAR: &t TECH -->
+      <div class="tech-sidebar">
+        <!-- 1. Brand Header with clean &t TECH branding -->
+        <div class="tech-sidebar-header">
+          <div class="tech-brand-wrap">
+            <div class="tech-brand-badge">
+              <span class="tech-brand-symbol">&amp;t</span>
+            </div>
+            <div class="tech-brand-text">
+              <span class="tech-brand-title">TECH</span>
+              <span class="tech-brand-subtitle">Concierge</span>
+            </div>
+          </div>
+          <div class="tech-header-actions">
+            <button class="tech-sidebar-btn" onclick="showToast('Starting new chat channel...')" title="New Chat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+            <button class="tech-sidebar-btn" onclick="showToast('WhatsApp &t TECH Settings')" title="Settings">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="1.5"></circle>
+                <circle cx="12" cy="5" r="1.5"></circle>
+                <circle cx="12" cy="19" r="1.5"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Search Container -->
+        <div class="tech-search-container">
+          <div class="tech-search-pill">
+            <svg class="tech-search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="tech-search-input" id="techSearchInput" placeholder="Search or start new chat" oninput="filterTechContacts(this.value)">
+          </div>
+        </div>
+
+        <!-- 3. Filter Pills (All, Active, Groups, Recent) -->
+        <div class="tech-filter-pills-row">
+          <button class="tech-filter-chip active" data-tab="all" onclick="setTechTabFilter('all')">All</button>
+          <button class="tech-filter-chip" data-tab="active" onclick="setTechTabFilter('active')">Active</button>
+          <button class="tech-filter-chip" data-tab="groups" onclick="setTechTabFilter('groups')">Groups</button>
+          <button class="tech-filter-chip" data-tab="recent" onclick="setTechTabFilter('recent')">Recent</button>
+        </div>
+
+        <!-- 4. Contacts Scroll Feed -->
+        <div class="tech-contacts-feed">
+          <div class="tech-section-label">
+            <span>Chats</span>
+            <span id="techChatCountBadge">7</span>
+          </div>
+          <div id="techActiveContactsList"></div>
+          <div id="techRecentContactsList"></div>
+        </div>
+
+        <!-- 5. Sidebar Bottom Navigation Dock (Home, Chair, Handphone, Woody, Ghostfreak, Cart) -->
+        <div class="tech-sidebar-bottom-dock">
+          <!-- 1. Home Icon -->
+          <button class="tech-dock-nav-btn" onclick="exitTechChatScreenTo(0)" title="Home Menu">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -4010,7 +4620,7 @@
           </button>
 
           <!-- 2. Chair Icon (Cafe Lounge & Seating Screen) -->
-          <button class="tech-top-icon-btn" onclick="exitTechChatScreenTo(2)" title="Cafe Lounge & Seating">
+          <button class="tech-dock-nav-btn" onclick="exitTechChatScreenTo(2)" title="Cafe Lounge & Seating">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 19v2"></path>
               <path d="M18 19v2"></path>
@@ -4022,115 +4632,57 @@
           </button>
 
           <!-- 3. Handphone Icon (phone_hand.png) -->
-          <button class="tech-top-icon-btn" onclick="showToast('Mobile Ordering App View Active 📱')" title="Mobile Orders">
-            <img src="assets/phone_hand.png" alt="Mobile App" style="width: 26px; height: 26px; object-fit: contain;">
+          <button class="tech-dock-nav-btn" onclick="showToast('Mobile Ordering App View Active 📱')" title="Mobile Orders">
+            <img src="assets/phone_hand.png" alt="Mobile App" style="width: 24px; height: 24px; object-fit: contain;">
           </button>
 
           <!-- 4. Profile Icon (Woody from Downloads) -->
-          <button class="tech-top-icon-btn" onclick="openPersonModal('Pam Bondi')" title="Woody Profile" style="overflow: hidden; padding: 2px;">
+          <button class="tech-dock-nav-btn" onclick="openPersonModal('Pam Bondi')" title="Woody Profile" style="overflow: hidden; padding: 2px;">
             <img src="assets/woody.png" alt="Woody Profile" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
           </button>
-        </div>
 
-        <div style="color: rgba(255,255,255,0.85); font-size: 14.5px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-          <span style="color: #00E676; font-size: 16px;">●</span> Starbucks &t TECH Concierge Hub
-        </div>
-
-        <!-- Right Side: Ghostfreak Notification Icon and Pixel Hand Cart Icon -->
-        <div class="tech-nav-icons-group">
-          <!-- Notification Icon (Ghostfreak from Downloads) -->
-          <button class="tech-top-icon-btn" onclick="showToast('No new notifications (Ghostfreak)')" title="Notifications">
-            <img src="assets/ghostfreak.png" alt="Notifications" style="width: 28px; height: 28px; object-fit: contain;">
+          <!-- 5. Notification Icon (Ghostfreak from Downloads) -->
+          <button class="tech-dock-nav-btn" onclick="showToast('No new notifications (Ghostfreak)')" title="Notifications">
+            <img src="assets/ghostfreak.png" alt="Notifications" style="width: 26px; height: 26px; object-fit: contain;">
           </button>
-          <!-- Cart Icon (Pixel Hand from Downloads with live badge) -->
-          <button class="tech-top-icon-btn cart-btn" onclick="cycleCartScreen()" title="Cart (Pixel Hand)">
-            <img src="assets/hand_pixel.png" alt="Cart" style="width: 26px; height: 26px; object-fit: contain;">
+
+          <!-- 6. Cart Icon (Pixel Hand from Downloads with live badge) -->
+          <button class="tech-dock-nav-btn cart-btn" onclick="cycleCartScreen()" title="Cart (Pixel Hand)">
+            <img src="assets/hand_pixel.png" alt="Cart" style="width: 24px; height: 24px; object-fit: contain;">
             <span class="cart-badge" id="cartBadgeTech" style="display:none;">0</span>
           </button>
         </div>
       </div>
 
-      <!-- 2-Column Desktop WhatsApp Layout -->
-      <div class="tech-desktop-container">
-        <!-- LEFT SIDEBAR: &t TECH -->
-        <div class="tech-sidebar">
-          <!-- 1. Header with &t TECH and + button -->
-          <div class="tech-sidebar-header">
-            <div class="tech-logo-row">
-              <div class="tech-logo-symbol">&amp;t</div>
-              <span class="tech-logo-text">TECH</span>
-            </div>
-            <div class="tech-header-icons">
-              <button class="tech-plus-btn" onclick="showToast('Creating new Starbucks chat channel...')" title="New Chat">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </button>
-              <button class="tech-dots-btn" onclick="showToast('Chat Settings & Preferences')" title="Menu">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="1.5"></circle>
-                  <circle cx="12" cy="5" r="1.5"></circle>
-                  <circle cx="12" cy="19" r="1.5"></circle>
-                </svg>
-              </button>
-            </div>
+      <!-- RIGHT CHAT MAIN CANVAS -->
+      <div class="tech-chat-main">
+        <!-- 1. EMPTY CHAT STATE -->
+        <div class="tech-empty-state" id="techChatEmptyState">
+          <div class="tech-empty-icon-ring">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
           </div>
-
-          <!-- 2. Search Container -->
-          <div class="tech-search-container">
-            <div class="tech-search-pill">
-              <svg class="tech-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input type="text" class="tech-search-input" id="techSearchInput" placeholder="Search" oninput="filterTechContacts(this.value)">
-            </div>
+          <h2 class="tech-empty-title">Starbucks &t TECH Desktop</h2>
+          <p class="tech-empty-desc">
+            Send and customize orders, request specialty roast blends, and message your personal baristas in real-time.
+          </p>
+          <div class="tech-empty-features-row">
+            <div class="tech-empty-pill">⚡ Instant Barista AI</div>
+            <div class="tech-empty-pill">☕ Specialty Custom Roasts</div>
+            <div class="tech-empty-pill">📍 Priority Seating Concierge</div>
           </div>
-
-          <!-- 3. Filter Tabs (Clock, Media, Contacts) -->
-          <div class="tech-filter-tabs">
-            <button class="tech-tab-icon-btn active" data-tab="all" onclick="setTechTabFilter('all')" title="All Chats">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </button>
-            <button class="tech-tab-icon-btn" data-tab="media" onclick="setTechTabFilter('media')" title="Media & Orders">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="3" ry="3"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-            </button>
-            <button class="tech-tab-icon-btn" data-tab="groups" onclick="setTechTabFilter('groups')" title="Groups & Channels">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </button>
-          </div>
-
-          <!-- 4. Contacts Feed -->
-          <div class="tech-contacts-feed">
-            <div class="tech-section-header">
-              <span>Active Now</span>
-              <span class="tech-section-count">4</span>
-            </div>
-            <div id="techActiveContactsList"></div>
-
-            <div class="tech-section-header" style="margin-top: 12px;">
-              <span>Recent Active Profile</span>
-              <span class="tech-section-count">3</span>
-            </div>
-            <div id="techRecentContactsList"></div>
+          <div class="tech-empty-security-tag">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            End-to-end encrypted coffee chat
           </div>
         </div>
 
-        <!-- RIGHT CHAT MAIN CANVAS -->
-        <div class="tech-chat-main">
+        <!-- 2. ACTIVE CHAT VIEW -->
+        <div class="tech-active-chat-wrapper" id="techChatActiveView">
           <!-- Main Chat Header -->
           <div class="tech-main-header">
             <div class="tech-active-user-wrap" onclick="openPersonModal(document.getElementById('techActiveUserName').textContent)">
@@ -4165,7 +4717,7 @@
                   <line x1="12" y1="8" x2="12.01" y2="8"></line>
                 </svg>
               </button>
-              <button class="tech-close-modal-btn" onclick="exitTechChatScreen()" title="Close Tech Chat">
+              <button class="tech-close-modal-btn" onclick="exitTechChatScreen()" title="Return to Menu">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -4200,7 +4752,7 @@
                 <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
               </svg>
             </button>
-            <input type="text" class="tech-dock-input" id="techChatTextInput" placeholder="Message Stephen Ramirez..." onkeydown="if(event.key==='Enter') sendTechChatMessage()">
+            <input type="text" class="tech-dock-input" id="techChatTextInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendTechChatMessage()">
             <button class="tech-dock-icon-btn" onclick="insertTechEmoji('☕')" title="Insert Coffee Emoji">
               😊
             </button>
@@ -4816,9 +5368,6 @@
 
     function openTechChatScreen(contactId) {
       previousScreenBeforeTechChat = currentScreenIdx;
-      if (contactId) {
-        currentTechContactId = contactId;
-      }
 
       // Hide all standard screens and chatScreen
       screens.forEach(id => {
@@ -4834,8 +5383,20 @@
         window.scrollTo(0, 0);
       }
 
+      // Show empty state first
+      const emptyState = document.getElementById('techChatEmptyState');
+      const activeView = document.getElementById('techChatActiveView');
+      if (emptyState) emptyState.style.display = 'flex';
+      if (activeView) activeView.classList.remove('active');
+
       renderTechContactsList();
-      selectTechContact(currentTechContactId);
+
+      // Auto-select if contactId given
+      if (contactId) {
+        currentTechContactId = contactId;
+        selectTechContact(currentTechContactId);
+      }
+
       showToast('Switched to &t TECH WhatsApp Hub 💬');
     }
 
@@ -4875,20 +5436,21 @@
       recentFeed.innerHTML = '';
 
       const query = searchQuery.toLowerCase().trim();
+      let activeCount = 0, recentCount = 0;
 
       techContacts.forEach(c => {
-        if (query && !c.name.toLowerCase().includes(query) && !c.lastMsg.toLowerCase().includes(query)) {
-          return;
-        }
-
+        if (query && !c.name.toLowerCase().includes(query) && !c.lastMsg.toLowerCase().includes(query)) return;
         if (currentTechFilter === 'groups' && !c.isGroup) return;
+        if (currentTechFilter === 'active' && c.section !== 'active') return;
+        if (currentTechFilter === 'recent' && c.section !== 'recent') return;
 
         const isSelected = c.id === currentTechContactId;
         const item = document.createElement('div');
-        item.className = 'tech-contact-item ' + (isSelected ? 'active' : '');
+        item.className = 'tech-contact-item' + (isSelected ? ' active' : '');
         item.onclick = () => selectTechContact(c.id);
 
         const statusClass = c.status === 'online' ? 'online' : 'recent';
+        const unreadHtml = c.unread > 0 ? `<span class="tech-unread-badge">${c.unread}</span>` : '';
 
         item.innerHTML = `
           <div class="tech-avatar-box">
@@ -4903,16 +5465,25 @@
               </div>
               <span class="tech-contact-time">${c.time}</span>
             </div>
-            <div class="tech-contact-snippet">${escapeHtml(c.lastMsg)}</div>
+            <div class="tech-contact-bottom-line">
+              <span class="tech-contact-snippet">${escapeHtml(c.lastMsg)}</span>
+              ${unreadHtml}
+            </div>
           </div>
         `;
 
         if (c.section === 'active') {
           activeFeed.appendChild(item);
+          activeCount++;
         } else {
           recentFeed.appendChild(item);
+          recentCount++;
         }
       });
+
+      // Update total count badge
+      const countBadge = document.getElementById('techChatCountBadge');
+      if (countBadge) countBadge.textContent = activeCount + recentCount;
     }
 
     function selectTechContact(id) {
@@ -4921,14 +5492,24 @@
 
       // Update sidebar active highlights
       document.querySelectorAll('.tech-contact-item').forEach(el => el.classList.remove('active'));
-      const activeItem = document.querySelector(`.tech-contact-item[onclick*="${id}"]`);
-      if (activeItem) activeItem.classList.add('active');
+
+      // Show active chat, hide empty state
+      const emptyState = document.getElementById('techChatEmptyState');
+      const activeView = document.getElementById('techChatActiveView');
+      if (emptyState) emptyState.style.display = 'none';
+      if (activeView) activeView.classList.add('active');
 
       // Update Right Header
       document.getElementById('techActiveUserName').textContent = contact.name;
       document.getElementById('techActiveUserStatus').textContent = (contact.status === 'online' ? '🟢 Online' : '🟠 Recently active') + ' • ' + contact.role;
       document.getElementById('techActiveUserAvatar').src = contact.img;
       document.getElementById('techChatTextInput').placeholder = 'Message ' + contact.name + '...';
+
+      // Mark as read
+      contact.unread = 0;
+
+      // Re-render contacts to update highlight & clear badge
+      renderTechContactsList(document.getElementById('techSearchInput')?.value || '');
 
       // Render Messages Feed
       renderTechMessages(contact);
