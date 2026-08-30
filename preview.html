@@ -3998,7 +3998,7 @@
          SCREEN 7: FULL UI DESKTOP WHATSAPP SCREEN (&t TECH)
          ========================================================================= -->
     <div class="screen" id="techChatScreen">
-      <!-- Top Navigation Bar with Home, Chair, Handphone, and Profile icons -->
+      <!-- Top Navigation Bar with Home, Chair, Handphone (phone_hand), and Profile (woody) icons -->
       <div class="tech-screen-top-bar">
         <div class="tech-nav-icons-group">
           <!-- 1. Home Icon (Returns to Home Screen) -->
@@ -4021,20 +4021,14 @@
             </svg>
           </button>
 
-          <!-- 3. Handphone Icon (Mobile Orders) -->
+          <!-- 3. Handphone Icon (phone_hand.png) -->
           <button class="tech-top-icon-btn" onclick="showToast('Mobile Ordering App View Active 📱')" title="Mobile Orders">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect>
-              <line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"></line>
-            </svg>
+            <img src="assets/phone_hand.png" alt="Mobile App" style="width: 26px; height: 26px; object-fit: contain;">
           </button>
 
-          <!-- 4. Profile Icon (User / Pam Bondi Modal) -->
-          <button class="tech-top-icon-btn" onclick="openPersonModal('Pam Bondi')" title="Profile & Tastemaker">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+          <!-- 4. Profile Icon (Woody from Downloads) -->
+          <button class="tech-top-icon-btn" onclick="openPersonModal('Pam Bondi')" title="Woody Profile" style="overflow: hidden; padding: 2px;">
+            <img src="assets/woody.png" alt="Woody Profile" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
           </button>
         </div>
 
@@ -4042,15 +4036,15 @@
           <span style="color: #00E676; font-size: 16px;">●</span> Starbucks &t TECH Concierge Hub
         </div>
 
-        <!-- Right Side: Notification Icon and Cart Icon from Screen 1 -->
+        <!-- Right Side: Ghostfreak Notification Icon and Pixel Hand Cart Icon -->
         <div class="tech-nav-icons-group">
-          <!-- Notification Icon (Trashboat / Notifications from Screen 1) -->
-          <button class="tech-top-icon-btn" onclick="showToast('No new notifications')" title="Notifications">
-            <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon" style="width: 26px; height: 26px; object-fit: contain;">
+          <!-- Notification Icon (Ghostfreak from Downloads) -->
+          <button class="tech-top-icon-btn" onclick="showToast('No new notifications (Ghostfreak)')" title="Notifications">
+            <img src="assets/ghostfreak.png" alt="Notifications" style="width: 28px; height: 28px; object-fit: contain;">
           </button>
-          <!-- Cart Icon (Hand Icon from Screen 1 with live badge) -->
-          <button class="tech-top-icon-btn cart-btn" onclick="cycleCartScreen()" title="Cart (Loop Screens)">
-            <img src="assets/hand.png?v=2" alt="Hand Icon" class="hand-nav-icon" style="width: 24px; height: 24px; object-fit: contain;">
+          <!-- Cart Icon (Pixel Hand from Downloads with live badge) -->
+          <button class="tech-top-icon-btn cart-btn" onclick="cycleCartScreen()" title="Cart (Pixel Hand)">
+            <img src="assets/hand_pixel.png" alt="Cart" style="width: 26px; height: 26px; object-fit: contain;">
             <span class="cart-badge" id="cartBadgeTech" style="display:none;">0</span>
           </button>
         </div>
