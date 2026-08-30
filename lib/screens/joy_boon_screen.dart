@@ -114,14 +114,22 @@ class _JoyBoonScreenState extends State<JoyBoonScreen> {
                   ),
                   Row(
                     children: [
-                      // Cart Button -> Loops to Screen 4 (Delicious Pasta)
-                      IconButton(
-                        icon: const Icon(
-                          Icons.shopping_cart_outlined,
-                          color: Color(0xFF013D29),
-                          size: 28,
+                      // Hand Button -> Loops to Screen 4 (Delicious Pasta)
+                      GestureDetector(
+                        onTap: () => _navigateToPastaScreen(),
+                        child: Container(
+                          padding: const EdgeInsets.all(6),
+                          child: Image.asset(
+                            'assets/hand.png',
+                            width: 26,
+                            height: 26,
+                            color: const Color(0xFF013D29),
+                            colorBlendMode: BlendMode.srcIn,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.touch_app,
+                                    color: Color(0xFF013D29), size: 28),
+                          ),
                         ),
-                        onPressed: () => _navigateToPastaScreen(),
                       ),
                       const SizedBox(width: 8),
                       Container(

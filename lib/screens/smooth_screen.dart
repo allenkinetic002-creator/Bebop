@@ -134,13 +134,20 @@ class _SmoothScreenState extends State<SmoothScreen> {
                       onPressed: () => _showToast('No new notifications'),
                     ),
                     const SizedBox(width: 8),
-                    IconButton(
-                      icon: const Icon(
-                        Icons.shopping_cart_outlined,
-                        color: Colors.white,
-                        size: 28,
+                    GestureDetector(
+                      onTap: () => _loopBackToHome(),
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        child: Image.asset(
+                          'assets/hand.png',
+                          width: 26,
+                          height: 26,
+                          color: Colors.white,
+                          colorBlendMode: BlendMode.srcIn,
+                          errorBuilder: (context, error, stackTrace) =>
+                              const Icon(Icons.touch_app, color: Colors.white, size: 26),
+                        ),
                       ),
-                      onPressed: () => _loopBackToHome(),
                     ),
                   ],
                 ),

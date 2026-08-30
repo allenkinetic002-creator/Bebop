@@ -113,14 +113,22 @@ class _PastaScreenState extends State<PastaScreen> {
                   ),
                   Row(
                     children: [
-                      // Coffee Cup Icon -> LOOPS TO SCREEN 5 (SmoothScreen)
-                      IconButton(
-                        icon: const Icon(
-                          Icons.local_cafe_outlined,
-                          color: Color(0xFFE8A238),
-                          size: 28,
+                      // Hand Icon -> LOOPS TO SCREEN 5 (SmoothScreen)
+                      GestureDetector(
+                        onTap: () => _navigateToSmoothScreen(),
+                        child: Container(
+                          padding: const EdgeInsets.all(6),
+                          child: Image.asset(
+                            'assets/hand.png',
+                            width: 26,
+                            height: 26,
+                            color: const Color(0xFF013D29),
+                            colorBlendMode: BlendMode.srcIn,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.touch_app,
+                                    color: Color(0xFF013D29), size: 28),
+                          ),
                         ),
-                        onPressed: () => _navigateToSmoothScreen(),
                       ),
                       const SizedBox(width: 6),
                       Stack(

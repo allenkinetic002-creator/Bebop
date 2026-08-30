@@ -8,7 +8,8 @@ class WavyHeader extends StatelessWidget {
 
   const WavyHeader({
     super.key,
-    this.userAvatarUrl = 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80',
+    this.userAvatarUrl =
+        'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80',
     this.onNotificationTap,
     this.onCartTap,
     this.cartCount = 0,
@@ -63,14 +64,15 @@ class WavyHeader extends StatelessWidget {
                       return Container(
                         color: const Color(0xFFD4A574),
                         alignment: Alignment.center,
-                        child: const Icon(Icons.person, color: Colors.white, size: 28),
+                        child: const Icon(Icons.person,
+                            color: Colors.white, size: 28),
                       );
                     },
                   ),
                 ),
               ),
 
-              // Right Actions: Notification Bell + Shopping Cart
+              // Right Actions: Notification Bell + Hand Navigation Icon
               Row(
                 children: [
                   _HeaderIconButton(
@@ -81,9 +83,28 @@ class WavyHeader extends StatelessWidget {
                   Stack(
                     clipBehavior: Clip.none,
                     children: [
-                      _HeaderIconButton(
-                        icon: Icons.shopping_cart_outlined,
+                      GestureDetector(
                         onTap: onCartTap ?? () {},
+                        child: Container(
+                          width: 42,
+                          height: 42,
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.12),
+                            shape: BoxShape.circle,
+                          ),
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/hand.png',
+                            width: 24,
+                            height: 24,
+                            fit: BoxFit.contain,
+                            color: Colors.white,
+                            colorBlendMode: BlendMode.srcIn,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.touch_app,
+                                    color: Colors.white, size: 22),
+                          ),
+                        ),
                       ),
                       if (cartCount > 0)
                         Positioned(
@@ -146,7 +167,6 @@ class _WavyHeaderClipper extends CustomClipper<Path> {
     final path = Path();
     path.lineTo(0, size.height - 24);
 
-    // Smooth organic wave dipping down on left and rising on right
     path.quadraticBezierTo(
       size.width * 0.35,
       size.height + 14,
@@ -167,5 +187,5 @@ class _WavyHeaderClipper extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(_WavyHeaderClipper oldClipper) => false;
+  bool shouldRepaint(covariant CustomClipper<Path> oldClipper) => false;
 }
