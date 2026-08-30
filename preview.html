@@ -1792,61 +1792,12 @@
     }
 
     .modal-bio {
-      font-size: 13px;
+      font-size: 13.5px;
       line-height: 1.55;
       color: #555555;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
       font-family: 'Poppins', sans-serif;
       min-height: 44px;
-    }
-
-    /* Message Tray */
-    .modal-message-box {
-      display: flex;
-      align-items: center;
-      background: #F4F7F5;
-      border: 1.5px solid #E1E8E5;
-      border-radius: 16px;
-      padding: 6px 6px 6px 14px;
-      margin-bottom: 18px;
-      transition: all 0.2s ease;
-    }
-
-    .modal-message-box:focus-within {
-      border-color: #00754A;
-      box-shadow: 0 0 0 3px rgba(0, 117, 74, 0.15);
-      background: #FFFFFF;
-    }
-
-    .modal-message-input {
-      flex: 1;
-      border: none;
-      background: transparent;
-      font-size: 13px;
-      color: #222222;
-      outline: none;
-      font-family: 'Poppins', sans-serif;
-      min-width: 0;
-    }
-
-    .modal-send-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: #013D29;
-      color: #FFFFFF;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-      flex-shrink: 0;
-    }
-
-    .modal-send-btn:hover {
-      background: #02573b;
-      transform: scale(1.08);
     }
 
     .modal-actions-row {
@@ -2983,8 +2934,6 @@
 
       document.getElementById('modalPersonName').textContent = data.name;
       document.getElementById('modalBio').textContent = data.bio;
-      document.getElementById('modalMessageInput').placeholder = 'Write a message to ' + data.name + '...';
-      document.getElementById('modalMessageInput').value = '';
 
       renderStars(currentRating);
 
@@ -3044,23 +2993,13 @@
       showToast('Rated ' + currentModalPerson + ' ' + stars + '.0 ★ (' + (stars * 20) + '%)');
     }
 
-    function sendModalMessage() {
-      const input = document.getElementById('modalMessageInput');
-      const val = input.value.trim();
-      if (val) {
-        showToast('Message sent to ' + currentModalPerson + ': "' + val + '"');
-        input.value = '';
-        setTimeout(() => closePersonModal(false), 1200);
-      } else {
-        input.focus();
-        showToast('Please type a message first!');
+    function handlePlaneClick() {
+      const msg = prompt('Send a message to ' + currentModalPerson + ':');
+      if (msg && msg.trim()) {
+        showToast('Message sent to ' + currentModalPerson + ': "' + msg.trim() + '"');
+      } else if (msg !== null) {
+        showToast('Direct message to ' + currentModalPerson);
       }
-    }
-
-    function focusMessageInput() {
-      const input = document.getElementById('modalMessageInput');
-      input.focus();
-      showToast('Type your message to ' + currentModalPerson);
     }
 
     document.addEventListener('keydown', (e) => {
@@ -3127,20 +3066,9 @@
           Pam Bondi is a strong leader and advocate. Known for her dedication and commitment to justice.
         </p>
 
-        <!-- Direct Message Composer -->
-        <div class="modal-message-box">
-          <input type="text" class="modal-message-input" id="modalMessageInput" placeholder="Write a message to Pam Bondi..." onkeydown="if(event.key==='Enter') sendModalMessage()">
-          <button class="modal-send-btn" onclick="sendModalMessage()" title="Send Message">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </button>
-        </div>
-
         <div class="modal-actions-row">
           <button class="modal-got-it-btn" onclick="closePersonModal(true)">Got it</button>
-          <button class="modal-plane-btn" onclick="focusMessageInput()" title="Direct Message">
+          <button class="modal-plane-btn" onclick="handlePlaneClick()" title="Send Message">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="22" y1="2" x2="11" y2="13"></line>
               <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
