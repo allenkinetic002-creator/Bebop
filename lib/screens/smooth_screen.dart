@@ -125,13 +125,21 @@ class _SmoothScreenState extends State<SmoothScreen> {
                 ),
                 Row(
                   children: [
-                    IconButton(
-                      icon: const Icon(
-                        Icons.notifications_none_rounded,
-                        color: Colors.white,
-                        size: 28,
+                    GestureDetector(
+                      onTap: () => _showToast('No new notifications'),
+                      child: Container(
+                        padding: const EdgeInsets.all(6),
+                        child: Image.asset(
+                          'assets/trashboat.png',
+                          width: 32,
+                          height: 32,
+                          color: Colors.white,
+                          colorBlendMode: BlendMode.srcIn,
+                          errorBuilder: (context, error, stackTrace) =>
+                              const Icon(Icons.notifications_none_rounded,
+                                  color: Colors.white, size: 28),
+                        ),
                       ),
-                      onPressed: () => _showToast('No new notifications'),
                     ),
                     const SizedBox(width: 8),
                     GestureDetector(

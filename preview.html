@@ -153,6 +153,20 @@
       mix-blend-mode: multiply;
     }
 
+    .trashboat-nav-icon {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      mix-blend-mode: screen;
+      display: block;
+      pointer-events: none;
+      transition: transform 0.2s ease;
+    }
+
+    .icon-btn:hover .trashboat-nav-icon {
+      transform: scale(1.15) rotate(6deg);
+    }
+
     /* SCROLL CONTENT */
     .content-scroll {
       flex: 1;
@@ -1654,11 +1668,8 @@
         <div class="header-nav">
           <img class="user-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
           <div class="header-icons">
-            <button class="icon-btn" onclick="showToast('No new notifications')">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-              </svg>
+            <button class="icon-btn" onclick="showToast('No new notifications')" title="Notifications">
+              <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon">
             </button>
             <!-- HAND ICON -> LOOPS TO SCREEN 2 (DETAILS) -->
             <button class="icon-btn cart-btn" onclick="cycleCartScreen()" title="Click to loop: 1st ➔ 2nd ➔ 3rd ➔ 4th ➔ 5th ➔ 1st">
@@ -1886,11 +1897,8 @@
         <div class="header-nav">
           <img class="user-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
           <div class="header-icons">
-            <button class="icon-btn" onclick="showToast('No new notifications')">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-              </svg>
+            <button class="icon-btn" onclick="showToast('No new notifications')" title="Notifications">
+              <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon">
             </button>
             <!-- HAND ICON -> LOOPS TO SCREEN 3 (JOY BOON) -->
             <button class="icon-btn cart-btn" onclick="cycleCartScreen()" title="Click to loop">
@@ -2270,11 +2278,8 @@
         <div class="header-nav">
           <img class="user-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80" alt="User Profile" onclick="showToast('Allen (Host Profile)')">
           <div class="header-icons">
-            <button class="icon-btn" onclick="showToast('No new notifications')">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-              </svg>
+            <button class="icon-btn" onclick="showToast('No new notifications')" title="Notifications">
+              <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon">
             </button>
             <!-- HAND ICON -> LOOPS BACK TO SCREEN 1 (HOME) -->
             <button class="icon-btn cart-btn" onclick="cycleCartScreen()" title="Click to loop: 5th ➔ 1st (Home)">

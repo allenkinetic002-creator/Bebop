@@ -72,12 +72,31 @@ class WavyHeader extends StatelessWidget {
                 ),
               ),
 
-              // Right Actions: Notification Bell + Hand Navigation Icon
+              // Right Actions: Trashboat Notification Icon + Hand Navigation Icon
               Row(
                 children: [
-                  _HeaderIconButton(
-                    icon: Icons.notifications_none_rounded,
+                  GestureDetector(
                     onTap: onNotificationTap ?? () {},
+                    child: Container(
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.14),
+                        shape: BoxShape.circle,
+                      ),
+                      alignment: Alignment.center,
+                      child: Image.asset(
+                        'assets/trashboat.png',
+                        width: 32,
+                        height: 32,
+                        fit: BoxFit.contain,
+                        color: Colors.white,
+                        colorBlendMode: BlendMode.srcIn,
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Icon(Icons.notifications_none_rounded,
+                                color: Colors.white, size: 26),
+                      ),
+                    ),
                   ),
                   const SizedBox(width: 14),
                   Stack(
