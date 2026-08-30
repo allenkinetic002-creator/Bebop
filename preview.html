@@ -1658,10 +1658,10 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 18, 12, 0.78);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: 3000;
+      background: rgba(0, 18, 12, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 9999;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -3093,6 +3093,10 @@
               Message
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+
     <!-- =========================================================================
          SCREEN 6: FULL UI CHAT SCREEN
          ========================================================================= -->
@@ -3315,6 +3319,7 @@
         showToast('Removed ' + catName);
       }
       updateCartBadge();
+      openPersonModal(catName || 'Pam Bondi');
     }
 
     function togglePersonAdd(btn, name) {
@@ -3331,6 +3336,7 @@
         showToast('Removed ' + name);
       }
       updateCartBadge();
+      openPersonModal(name || 'Pam Bondi');
     }
 
     function selectSize(card, sizeName) {
@@ -3353,6 +3359,7 @@
         showToast('Removed ' + sizeName);
       }
       updateCartBadge();
+      openPersonModal('Pam Bondi');
     }
 
     function toggleCart(btn, itemName) {
@@ -3369,6 +3376,7 @@
         showToast('Removed ' + itemName);
       }
       updateCartBadge();
+      openPersonModal('Pam Bondi');
     }
 
     function updateCartBadge() {
@@ -3470,26 +3478,32 @@
       currentModalPerson = data.name;
       currentRating = data.rating;
 
-      document.getElementById('modalPersonName').textContent = data.name;
-      document.getElementById('modalBio').textContent = data.bio;
+      const nameEl = document.getElementById('modalPersonName');
+      const bioEl = document.getElementById('modalBio');
+      if (nameEl) nameEl.textContent = data.name;
+      if (bioEl) bioEl.textContent = data.bio;
 
       renderStars(currentRating);
 
       const portraitRing = document.getElementById('modalPortraitContainer');
-      if (data.isFigmaPam) {
-        portraitRing.innerHTML = '<div class="modal-figma-pam"></div>';
-      } else {
-        portraitRing.innerHTML = '<img class="modal-portrait-img" src="' + data.img + '" alt="' + data.name + '">';
+      if (portraitRing) {
+        if (data.isFigmaPam) {
+          portraitRing.innerHTML = '<div class="modal-figma-pam"></div>';
+        } else {
+          portraitRing.innerHTML = '<img class="modal-portrait-img" src="' + data.img + '" alt="' + data.name + '">';
+        }
       }
 
       const overlay = document.getElementById('personModalOverlay');
-      overlay.classList.add('active');
+      if (overlay) {
+        overlay.classList.add('active');
+      }
       document.body.style.overflow = 'hidden';
     }
 
     function closePersonModal(isConfirmed) {
       const overlay = document.getElementById('personModalOverlay');
-      overlay.classList.remove('active');
+      if (overlay) overlay.classList.remove('active');
       document.body.style.overflow = '';
       if (isConfirmed) {
         showToast('Profile confirmed for ' + currentModalPerson + '!');
@@ -3514,7 +3528,8 @@
         }
       });
       const percent = (rating * 20) + '%';
-      document.getElementById('modalRatingPercent').textContent = percent;
+      const pEl = document.getElementById('modalRatingPercent');
+      if (pEl) pEl.textContent = percent;
     }
 
     function previewRating(stars) {
@@ -3704,31 +3719,6 @@
         }
       }
     });
-
-    /* Intercept add buttons and person tap across screens */
-    const originalTogglePersonAdd = togglePersonAdd;
-    togglePersonAdd = function(btn, name) {
-      openPersonModal(name);
-      originalTogglePersonAdd(btn, name);
-    };
-
-    const originalToggleCart = toggleCart;
-    toggleCart = function(btn, itemName) {
-      openPersonModal('Pam Bondi');
-      originalToggleCart(btn, itemName);
-    };
-
-    const originalToggleSizeAdd = toggleSizeAdd;
-    toggleSizeAdd = function(btn, sizeName) {
-      openPersonModal('Pam Bondi');
-      originalToggleSizeAdd(btn, sizeName);
-    };
-
-    const originalToggleCategoryAdd = toggleCategoryAdd;
-    toggleCategoryAdd = function(btn, catName) {
-      openPersonModal(catName || 'Pam Bondi');
-      originalToggleCategoryAdd(btn, catName);
-    };
   </script>
 
   <!-- =========================================================================
