@@ -4649,12 +4649,277 @@
         <div class="tech-online-avatars-row" id="techOnlineAvatarsRow"></div>
 
         <!-- 4. Contacts Scroll Feed -->
-        <div class="tech-contacts-feed">
+        <div class="tech-contacts-feed" id="techContactsFeed">
           <div class="tech-section-label">
             <span>Chats</span>
             <span id="techChatCountBadge">15</span>
           </div>
-          <div id="techActiveContactsList"></div>
+          <div id="techActiveContactsList">
+            <!-- 1. Stephen Ramirez -->
+            <div class="tech-contact-item active" onclick="selectTechContact('stephen')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80" alt="Stephen Ramirez">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Stephen Ramirez</span></div>
+                  <span class="tech-contact-time">12:15 PM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Hey! Can I prepare your cold brew order? ☕</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Mildred Peterson -->
+            <div class="tech-contact-item" onclick="selectTechContact('mildred')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="Mildred Peterson">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Mildred Peterson</span></div>
+                  <span class="tech-contact-time">11:42 AM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">The new hazelnut roast is ready for tasting!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Elena Rostova -->
+            <div class="tech-contact-item" onclick="selectTechContact('elena')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80" alt="Elena Rostova">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Elena Rostova</span></div>
+                  <span class="tech-contact-time">1:05 PM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Just cupped a stellar Geisha micro-lot from Panama! 🌸</span>
+                  <span class="tech-unread-badge">2</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Marcus Vance -->
+            <div class="tech-contact-item" onclick="selectTechContact('marcus')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=80" alt="Marcus Vance">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Marcus Vance</span></div>
+                  <span class="tech-contact-time">12:48 PM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Nitro cold brew keg is fresh on tap for you ❄️</span>
+                  <span class="tech-unread-badge">1</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Reserve Tasting Lounge (VIP Group) -->
+            <div class="tech-contact-item" onclick="selectTechContact('reserve_vip')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=200&auto=format&fit=crop&q=80" alt="Reserve Tasting Lounge">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap">
+                    <span class="tech-contact-name">Reserve Tasting Lounge</span>
+                    <span class="tech-group-badge">VIP</span>
+                  </div>
+                  <span class="tech-contact-time">12:30 PM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">🌟 Special Reserve pairing event kicks off at 3 PM</span>
+                  <span class="tech-unread-badge">4</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Mordecai Quinn -->
+            <div class="tech-contact-item" onclick="selectTechContact('mordecai')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80" alt="Mordecai Quinn">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Mordecai Quinn</span></div>
+                  <span class="tech-contact-time">8:45 AM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Nitro taps are sparkling clean and ready for your morning shot ☕⚡</span>
+                  <span class="tech-unread-badge">1</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Pam Bondi -->
+            <div class="tech-contact-item" onclick="selectTechContact('pam')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="assets/pam_bondi_figma.png" alt="Pam Bondi">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Pam Bondi</span></div>
+                  <span class="tech-contact-time">Aug 27</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Starbucks Advocate: Let's customize your beverage ✨</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. Patrick Gordon -->
+            <div class="tech-contact-item" onclick="selectTechContact('patrick')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80" alt="Patrick Gordon">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Patrick Gordon</span></div>
+                  <span class="tech-contact-time">10:30 AM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Table reservation confirmed for 2:30 PM.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. Liam Thorne -->
+            <div class="tech-contact-item" onclick="selectTechContact('liam')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&auto=format&fit=crop&q=80" alt="Liam Thorne">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Liam Thorne</span></div>
+                  <span class="tech-contact-time">11:15 AM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Your swan latte art request is ready! 🦢✨</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. Jerry Lawson (Group) -->
+            <div class="tech-contact-item" onclick="selectTechContact('jerry')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80" alt="Jerry Lawson">
+                <div class="tech-status-dot online"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap">
+                    <span class="tech-contact-name">Jerry Lawson</span>
+                    <span class="tech-group-badge">GROUP</span>
+                  </div>
+                  <span class="tech-contact-time">9:15 AM</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">☕ Barista Roast Masters: Fresh batch beans arrived...</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 11. Jordan Day -->
+            <div class="tech-contact-item" onclick="selectTechContact('jordan')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&auto=format&fit=crop&q=80" alt="Jordan Day">
+                <div class="tech-status-dot recent"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Jordan Day</span></div>
+                  <span class="tech-contact-time">Yesterday</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Thanks for the extra caramel tip! ⭐</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 12. Chloe Bennett -->
+            <div class="tech-contact-item" onclick="selectTechContact('chloe')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&auto=format&fit=crop&q=80" alt="Chloe Bennett">
+                <div class="tech-status-dot recent"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Chloe Bennett</span></div>
+                  <span class="tech-contact-time">Yesterday</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Warm almond brioche just came out of the oven 🥐</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 13. Hannah Banks -->
+            <div class="tech-contact-item" onclick="selectTechContact('hannah')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80" alt="Hannah Banks">
+                <div class="tech-status-dot recent"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Hannah Banks</span></div>
+                  <span class="tech-contact-time">Aug 28</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">See you at the drive-thru window in 5 mins.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 14. Maya Lin -->
+            <div class="tech-contact-item" onclick="selectTechContact('maya')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&auto=format&fit=crop&q=80" alt="Maya Lin">
+                <div class="tech-status-dot recent"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Maya Lin</span></div>
+                  <span class="tech-contact-time">Aug 26</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Single-origin shade-grown beans just cleared customs 🌿</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 15. Carlos Mendez -->
+            <div class="tech-contact-item" onclick="selectTechContact('carlos')">
+              <div class="tech-avatar-box">
+                <img class="tech-avatar-img" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80" alt="Carlos Mendez">
+                <div class="tech-status-dot recent"></div>
+              </div>
+              <div class="tech-contact-info">
+                <div class="tech-contact-top-line">
+                  <div class="tech-contact-name-wrap"><span class="tech-contact-name">Carlos Mendez</span></div>
+                  <span class="tech-contact-time">Aug 25</span>
+                </div>
+                <div class="tech-contact-bottom-line">
+                  <span class="tech-contact-snippet">Sumatra-Guatemala 70/30 dark blend ratio dialed in ☕</span>
+                </div>
+              </div>
+            </div>
+          </div>
           <div id="techRecentContactsList"></div>
         </div>
 
@@ -5511,6 +5776,22 @@
           { type: 'incoming', text: 'Tested your custom roast ratio on the Probat roaster.', time: 'Aug 25' },
           { type: 'incoming', text: 'Sumatra-Guatemala 70/30 dark blend ratio dialed in ☕', time: 'Aug 25' }
         ]
+      },
+      {
+        id: 'mordecai',
+        name: 'Mordecai Quinn',
+        status: 'online',
+        section: 'active',
+        role: 'Cold Brew Lead Roaster',
+        img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80',
+        time: '8:45 AM',
+        lastMsg: 'Nitro taps are sparkling clean and ready for your morning shot ☕⚡',
+        unread: 1,
+        isGroup: false,
+        history: [
+          { type: 'incoming', text: 'Good morning! Just finished sanitizing and calibrating our nitro cold tap system.', time: '8:40 AM' },
+          { type: 'incoming', text: 'Nitro taps are sparkling clean and ready for your morning shot ☕⚡', time: '8:45 AM' }
+        ]
       }
     ];
 
@@ -5896,6 +6177,11 @@
         }
       }
     });
+
+    // Initialize tech contacts feed immediately
+    if (typeof renderTechContactsList === 'function') {
+      renderTechContactsList();
+    }
   </script>
 
   <!-- =========================================================================
