@@ -4968,18 +4968,7 @@
             <div class="tech-empty-pill">📍 Priority Seating Concierge</div>
           </div>
 
-          <!-- Interactive Chat People Avatars Quick Access (Home Hub) -->
-          <div style="margin-top: 18px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; max-width: 760px;">
-            <span style="font-size: 14px; font-weight: 800; color: #013D29; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
-              <span>👥 Chat People & Baristas</span>
-              <span style="background: #00E676; color: #013D29; padding: 2px 8px; border-radius: 12px; font-size: 11px;">15 Online</span>
-            </span>
-            <div id="techHomeAvatarsGrid" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; width: 100%; max-height: 280px; overflow-y: auto; padding: 10px;">
-              <!-- Dynamically populated with all 15 people avatars -->
-            </div>
-          </div>
-
-          <div class="tech-empty-security-tag">
+          <div class="tech-empty-security-tag" style="margin-top: 10px;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -5867,33 +5856,7 @@
 
       // Clear active selection highlight
       document.querySelectorAll('.tech-contact-item').forEach(el => el.classList.remove('active'));
-
-      renderTechChatHomeAvatars();
-      showToast('Minions Home: Click any avatar to chat 💬');
-    }
-
-    function renderTechChatHomeAvatars() {
-      const grid = document.getElementById('techHomeAvatarsGrid');
-      if (!grid) return;
-      grid.innerHTML = '';
-
-      techContacts.forEach(c => {
-        const card = document.createElement('div');
-        card.style.cssText = 'cursor: pointer; text-align: center; transition: all 0.2s cubic-bezier(0.16,1,0.3,1); width: 88px; display: flex; flex-direction: column; align-items: center; padding: 8px 4px; border-radius: 12px; background: rgba(255,255,255,0.7); box-shadow: 0 2px 8px rgba(0,0,0,0.05);';
-        card.onmouseover = () => { card.style.transform = 'translateY(-4px) scale(1.05)'; card.style.background = '#FFFFFF'; card.style.boxShadow = '0 6px 16px rgba(0,0,0,0.12)'; };
-        card.onmouseout = () => { card.style.transform = 'none'; card.style.background = 'rgba(255,255,255,0.7)'; card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)'; };
-        card.onclick = () => selectTechContact(c.id);
-
-        const borderColor = c.status === 'online' ? '#00E676' : '#FFA726';
-        card.innerHTML = `
-          <div style="position: relative; width: 56px; height: 56px; border-radius: 50%; padding: 2px; background: linear-gradient(135deg, ${borderColor} 0%, #013D29 100%);">
-            <img src="${c.img}" alt="${c.name}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; border: 1.5px solid #FFFFFF;">
-          </div>
-          <span style="font-size: 11.5px; font-weight: 700; color: #013D29; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px;">${c.name.split(' ')[0]}</span>
-          <span style="font-size: 9.5px; color: #4A6559; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px;">${c.role.split(' ')[0]}</span>
-        `;
-        grid.appendChild(card);
-      });
+      showToast('Minions Home');
     }
 
     function exitTechChatScreen() {
