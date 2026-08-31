@@ -4601,9 +4601,9 @@
             </svg>
           </button>
 
-          <!-- 2. Handphone Icon - phone_hand.png (50px button, 48px logo inside) -->
+          <!-- 2. Handphone Icon - phone_hand.png (50px button, 40px logo inside) -->
           <button class="tech-dock-nav-btn" onclick="showToast('Mobile Ordering App View Active 📱')" title="Mobile Orders" style="width:50px;height:50px;border-radius:14px;padding:0;">
-            <img src="assets/phone_hand.png" alt="Mobile App" style="width: 48px; height: 48px; object-fit: contain;">
+            <img src="assets/phone_hand.png" alt="Mobile App" style="width: 40px; height: 40px; object-fit: contain;">
           </button>
 
           <!-- 3. Profile Icon - Woody (50px button, 32px logo inside) -->
@@ -4611,9 +4611,9 @@
             <img src="assets/woody.png" alt="Woody Profile" style="width: 32px; height: 32px; object-fit: cover; border-radius: 8px;">
           </button>
 
-          <!-- 4. Cart Icon - hand_pixel.png (50px button, 44px logo inside) -->
+          <!-- 4. Cart Icon - hand_pixel.png (50px button, 36px logo inside - slightly reduced) -->
           <button class="tech-dock-nav-btn cart-btn" onclick="cycleCartScreen()" title="Cart" style="width:50px;height:50px;border-radius:14px;padding:0;">
-            <img src="assets/hand_pixel.png" alt="Cart" style="width: 44px; height: 44px; object-fit: contain;">
+            <img src="assets/hand_pixel.png" alt="Cart" style="width: 36px; height: 36px; object-fit: contain;">
             <span class="cart-badge" id="cartBadgeTech" style="display:none;">0</span>
           </button>
         </div>
@@ -5321,6 +5321,116 @@
         isFigmaPam: true,
         history: [
           { type: 'incoming', text: 'Hello! I am Pam Bondi. Let\'s make sure your Starbucks experience is extraordinary! 🌿☕', time: 'Aug 27' }
+        ]
+      },
+      {
+        id: 'elena',
+        name: 'Elena Rostova',
+        status: 'online',
+        section: 'active',
+        role: 'Chief Bean Sommelier',
+        img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80',
+        time: '1:05 PM',
+        lastMsg: 'Just cupped a stellar Geisha micro-lot from Panama! 🌸',
+        unread: 2,
+        isGroup: false,
+        history: [
+          { type: 'incoming', text: 'Hey Allen! We just received direct-trade Geisha beans with delicate jasmine & bergamot notes.', time: '1:00 PM' },
+          { type: 'incoming', text: 'Just cupped a stellar Geisha micro-lot from Panama! 🌸 Would you like a pour-over prep?', time: '1:05 PM' }
+        ]
+      },
+      {
+        id: 'marcus',
+        name: 'Marcus Vance',
+        status: 'online',
+        section: 'active',
+        role: 'Cold Brew Master',
+        img: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=80',
+        time: '12:48 PM',
+        lastMsg: 'Nitro cold brew keg is fresh on tap for you ❄️',
+        unread: 1,
+        isGroup: false,
+        history: [
+          { type: 'incoming', text: 'Your 20-hour steep cold brew batch reached peak chocolate undertones.', time: '12:45 PM' },
+          { type: 'incoming', text: 'Nitro cold brew keg is fresh on tap for you ❄️', time: '12:48 PM' }
+        ]
+      },
+      {
+        id: 'reserve_vip',
+        name: 'Reserve Tasting Lounge',
+        status: 'online',
+        section: 'active',
+        role: 'VIP Member Group',
+        img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=200&auto=format&fit=crop&q=80',
+        time: '12:30 PM',
+        lastMsg: '🌟 Special Reserve pairing event kicks off at 3 PM',
+        unread: 4,
+        isGroup: true,
+        groupBadge: 'VIP',
+        history: [
+          { type: 'incoming', text: 'Welcome VIP Members! Today\'s tasting features aged barrel roasts with artisanal chocolates.', time: '12:15 PM' },
+          { type: 'incoming', text: '🌟 Special Reserve pairing event kicks off at 3 PM', time: '12:30 PM' }
+        ]
+      },
+      {
+        id: 'liam',
+        name: 'Liam Thorne',
+        status: 'online',
+        section: 'active',
+        role: 'Latte Art Specialist',
+        img: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&auto=format&fit=crop&q=80',
+        time: '11:15 AM',
+        lastMsg: 'Your swan latte art request is ready! 🦢✨',
+        isGroup: false,
+        history: [
+          { type: 'incoming', text: 'Steaming the microfoam to velvety perfection now.', time: '11:10 AM' },
+          { type: 'incoming', text: 'Your swan latte art request is ready! 🦢✨', time: '11:15 AM' }
+        ]
+      },
+      {
+        id: 'chloe',
+        name: 'Chloe Bennett',
+        status: 'recent',
+        section: 'recent',
+        role: 'Pastry & Pairing Lead',
+        img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&auto=format&fit=crop&q=80',
+        time: 'Yesterday',
+        lastMsg: 'Warm almond brioche just came out of the oven 🥐',
+        isGroup: false,
+        history: [
+          { type: 'incoming', text: 'Bonjour! Are you stopping by for the bakery rotation today?', time: 'Yesterday' },
+          { type: 'outgoing', text: 'Yes! What pairs best with blonde espresso?', time: 'Yesterday' },
+          { type: 'incoming', text: 'Warm almond brioche just came out of the oven 🥐', time: 'Yesterday' }
+        ]
+      },
+      {
+        id: 'maya',
+        name: 'Maya Lin',
+        status: 'recent',
+        section: 'recent',
+        role: 'Direct Sourcing Partner',
+        img: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&auto=format&fit=crop&q=80',
+        time: 'Aug 26',
+        lastMsg: 'Single-origin shade-grown beans just cleared customs 🌿',
+        isGroup: false,
+        history: [
+          { type: 'incoming', text: 'Exciting news on the eco-harvest front!', time: 'Aug 26' },
+          { type: 'incoming', text: 'Single-origin shade-grown beans just cleared customs 🌿', time: 'Aug 26' }
+        ]
+      },
+      {
+        id: 'carlos',
+        name: 'Carlos Mendez',
+        status: 'recent',
+        section: 'recent',
+        role: 'Master Blender',
+        img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80',
+        time: 'Aug 25',
+        lastMsg: 'Sumatra-Guatemala 70/30 dark blend ratio dialed in ☕',
+        isGroup: false,
+        history: [
+          { type: 'incoming', text: 'Tested your custom roast ratio on the Probat roaster.', time: 'Aug 25' },
+          { type: 'incoming', text: 'Sumatra-Guatemala 70/30 dark blend ratio dialed in ☕', time: 'Aug 25' }
         ]
       }
     ];
