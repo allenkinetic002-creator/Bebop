@@ -4554,9 +4554,9 @@
             <span style="font-size: 22px; font-weight: 900; color: #FFFFFF; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif;">Minions</span>
           </div>
           <div class="tech-header-actions">
-            <!-- Trashboat Notification Icon (Enlarged to 44px) -->
-            <button class="tech-sidebar-btn" onclick="showToast('No new notifications (Trashboat)')" title="Notifications" style="padding:0;overflow:visible;">
-              <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon" style="width: 44px; height: 44px; object-fit: contain; mix-blend-mode: screen; pointer-events: none;">
+            <!-- Trashboat Notification Icon (Enlarged: 50px button, 52px logo) -->
+            <button class="tech-sidebar-btn" onclick="showToast('No new notifications (Trashboat)')" title="Notifications (Trashboat)" style="width: 48px; height: 48px; padding:0; overflow:visible; background: rgba(255,255,255,0.15);">
+              <img src="assets/trashboat.png" alt="Notifications" class="trashboat-nav-icon" style="width: 52px; height: 52px; object-fit: contain; mix-blend-mode: screen; pointer-events: none;">
             </button>
             <button class="tech-sidebar-btn" onclick="showToast('Starting new chat channel...')" title="New Chat">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -4595,7 +4595,7 @@
           <div id="techRecentContactsList"></div>
         </div>
 
-        <!-- Bottom Navigation Dock: Home, phone_hand, Cart (Hand), Woody -->
+        <!-- Bottom Navigation Dock: Home, phone_hand, Trashboat, Cart (Hand), Woody -->
         <div class="tech-sidebar-bottom-dock">
           <!-- 1. Home Icon (50px button, 36px logo inside) -->
           <button class="tech-dock-nav-btn" onclick="exitTechChatScreenTo(0)" title="Home Menu" style="width:50px;height:50px;border-radius:14px;padding:0;">
@@ -4610,13 +4610,18 @@
             <img src="assets/phone_hand.png" alt="Mobile App" style="width: 40px; height: 40px; object-fit: contain;">
           </button>
 
-          <!-- 3. Cart Icon - hand_pixel.png (50px button, 36px logo inside) -->
+          <!-- 3. Trashboat Notification Icon (50px button, 48px logo inside) -->
+          <button class="tech-dock-nav-btn" onclick="showToast('No new notifications (Trashboat)')" title="Notifications (Trashboat)" style="width:50px;height:50px;border-radius:14px;padding:0;overflow:visible;">
+            <img src="assets/trashboat.png" alt="Trashboat Notifications" class="trashboat-nav-icon" style="width: 48px; height: 48px; object-fit: contain; mix-blend-mode: screen; pointer-events: none;">
+          </button>
+
+          <!-- 4. Cart Icon - hand_pixel.png (50px button, 36px logo inside) -->
           <button class="tech-dock-nav-btn cart-btn" onclick="cycleCartScreen()" title="Cart" style="width:50px;height:50px;border-radius:14px;padding:0;">
             <img src="assets/hand_pixel.png" alt="Cart" style="width: 36px; height: 36px; object-fit: contain;">
             <span class="cart-badge" id="cartBadgeTech" style="display:none;">0</span>
           </button>
 
-          <!-- 4. Profile Icon - Woody (50px button, 32px logo inside) -->
+          <!-- 5. Profile Icon - Woody (50px button, 32px logo inside) -->
           <button class="tech-dock-nav-btn" onclick="openPersonModal('Pam Bondi')" title="Woody Profile" style="overflow:hidden;width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;">
             <img src="assets/woody.png" alt="Woody Profile" style="width: 32px; height: 32px; object-fit: cover; border-radius: 8px;">
           </button>
