@@ -2716,6 +2716,66 @@
       flex-shrink: 0;
     }
 
+    /* ONLINE CHAT PEOPLE AVATARS BAR */
+    .tech-online-avatars-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    .tech-online-avatars-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tech-online-avatar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tech-online-avatar-item:hover {
+      transform: translateY(-2px) scale(1.06);
+    }
+
+    .tech-online-avatar-box {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      padding: 2px;
+      background: linear-gradient(135deg, #00E676 0%, #013D29 100%);
+      box-shadow: 0 4px 10px rgba(0, 230, 118, 0.25);
+    }
+
+    .tech-online-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 1.5px solid #013D29;
+    }
+
+    .tech-online-avatar-name {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+      max-width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+    }
+
     /* 5. SIDEBAR BOTTOM NAVIGATION DOCK (Home, Chair, Handphone, Woody, Ghostfreak, Cart) */
     .tech-sidebar-bottom-dock {
       position: absolute;
@@ -4576,6 +4636,9 @@
           </div>
         </div>
 
+        <!-- 3. Online People Avatars Story Row -->
+        <div class="tech-online-avatars-row" id="techOnlineAvatarsRow"></div>
+
         <!-- 4. Contacts Scroll Feed -->
         <div class="tech-contacts-feed">
           <div class="tech-section-label">
@@ -5549,6 +5612,25 @@
         }
       });
 
+      // Render Top Online People Avatars Story Row
+      const onlineAvatarsRow = document.getElementById('techOnlineAvatarsRow');
+      if (onlineAvatarsRow) {
+        onlineAvatarsRow.innerHTML = '';
+        techContacts.filter(c => c.status === 'online').forEach(c => {
+          const avatarItem = document.createElement('div');
+          avatarItem.className = 'tech-online-avatar-item';
+          avatarItem.title = c.name + ' (' + c.role + ')';
+          avatarItem.onclick = () => selectTechContact(c.id);
+          avatarItem.innerHTML = `
+            <div class="tech-online-avatar-box">
+              <img class="tech-online-avatar-img" src="${c.img}" alt="${c.name}">
+            </div>
+            <span class="tech-online-avatar-name">${c.name.split(' ')[0]}</span>
+          `;
+          onlineAvatarsRow.appendChild(avatarItem);
+        });
+      }
+
       // Update total count badge
       const countBadge = document.getElementById('techChatCountBadge');
       if (countBadge) countBadge.textContent = activeCount + recentCount;
@@ -5674,7 +5756,7 @@
 
       if (type === 'incoming') {
         row.innerHTML = `
-          <img class="tech-bubble-avatar" src="${contact.img}" alt="${contact.name}">
+          <img class="tech-bubble-avatar" src="${contact.img}" alt="${contact.name}" title="${contact.name}">
           <div class="tech-bubble-box">
             ${escapeHtml(msgText)}
             <div class="tech-bubble-meta">${timeStr || 'Now'}</div>
@@ -5686,6 +5768,7 @@
             ${escapeHtml(msgText)}
             <div class="tech-bubble-meta">${timeStr || 'Now'} • Read ✓✓</div>
           </div>
+          <img class="tech-bubble-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80" alt="You" title="Allen (Host)" style="margin-left:8px; border:2px solid #00E676;">
         `;
       }
 
